@@ -25,3 +25,8 @@ Route::group(['middleware' => 'CheckType:user'],function(){
     Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment.index');
     Route::post('/appointment', [App\Http\Controllers\AppointmentController::class, 'submitAppointment'])->name('appointment.submitAppointment');
 });
+
+Route::group(['middleware' => 'CheckType:admin'],function(){ 
+    Route::get('/addadmin', [App\Http\Controllers\AdminController::class, 'index'])->name('registeradmin.index');
+    Route::post('/addadmin', [App\Http\Controllers\AdminController::class, 'store'])->name('registeradmin.store');
+});

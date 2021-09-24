@@ -7,7 +7,14 @@
             <div class="card">
                 <div class="card-header">
                     @if(Auth::user()->user_type == "admin")
-                        <h2>Admin Panel</h2>
+                        <div class="row">
+                            <div class="col">
+                                <h2>Admin Panel</h2>
+                            </div>
+                            <div class="col text-right">
+                                <a href="{{ route('registeradmin.index') }}" class="btn btn-primary">Add New Admin</a>
+                            </div>
+                        </div>
                     @else
                         <a href="{{ route('appointment.index') }}" class="btn btn-primary">Make Appointment</a>
                     @endif

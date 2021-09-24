@@ -12,6 +12,7 @@
                 <div class="card-body">
                     @include('inc.message')
                     <form action="{{ route('appointment.submitAppointment')}}" method="POST">
+            
                         @csrf
 
                         <div class="form-group">
@@ -21,7 +22,7 @@
 
                         <div class="form-group">
                             <label for="details">Date</label>
-                            <input type="date" class="form-control @error('date') border-danger @enderror"" name="date">
+                            <input type="date" class="form-control @error('date') border-danger @enderror" name="date">
                         </div>
                         
                         <div class="form-group">
