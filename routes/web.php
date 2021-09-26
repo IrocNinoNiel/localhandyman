@@ -29,4 +29,5 @@ Route::group(['middleware' => 'CheckType:user'],function(){
 Route::group(['middleware' => 'CheckType:admin'],function(){ 
     Route::get('/addadmin', [App\Http\Controllers\AdminController::class, 'index'])->name('registeradmin.index');
     Route::post('/addadmin', [App\Http\Controllers\AdminController::class, 'store'])->name('registeradmin.store');
+    Route::delete('/home/{id}', [App\Http\Controllers\AppointmentController::class, 'destroy'])->name('appointment.destroy');
 });

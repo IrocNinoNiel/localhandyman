@@ -48,6 +48,7 @@ class AppointmentController extends Controller
         $appointment->time = $request->time;
         $appointment->phone_num = $request->phone_num;
         $appointment->user_id = Auth::user()->id;
+        $appointment->status = 1;
 
         $appointment->save();
 
@@ -60,6 +61,18 @@ class AppointmentController extends Controller
         // ]);
 
         return Redirect::route('home')->with('success','Appointment Created');
+
+    }
+
+    public function destroy($id)
+    {
+        $appointment = Appointment::find($id);
+        if(is_null($appointment)) abort(404);
+
+        $appointment->status = 2;
+        $appointment->save();
+
+        return Redirect::route('home')->with('success','Appointment Has Been Done');
 
     }
 }
