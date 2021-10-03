@@ -50,6 +50,7 @@
                                                             <p><b>Hour Limit</b>: {{$appointment->hour_limit}} hours</p>
                                                             <p><b>time</b>: {{$appointment->time}}</p>
                                                             <p><b>By</b>: {{$appointment->user->name}}</p>
+                                                            <p><b>Phone #</b>: {{$appointment->phone_num}}</p>
                                                             <p><b>Status</b>: 
                                                                 @if($appointment->status == 1) 
                                                                     <button class="btn btn-primary">Active</button>
@@ -104,6 +105,7 @@
                                                             <p><b>Details</b>: {{$appointment->details}}</p>
                                                             <p><b>Hour Limit</b>: {{$appointment->hour_limit}} hours</p>
                                                             <p><b>time</b>: {{$appointment->time}}</p>
+                                                            <p><b>Phone #</b>: {{$appointment->phone_num}}</p>
                                                             <p><b>Status</b>: 
                                                                 @if($appointment->status == 1) 
                                                                     <button class="btn btn-primary">Ongoing</button>
